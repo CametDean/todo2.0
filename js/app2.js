@@ -15,6 +15,14 @@ function updateTodoItem(todo, id, newTask){
     todo[id] = newTask
 }
 
+function getTodoAsHTMLString(todo){
+    
+}
+
+function addDOM(todo){
+    return document.querySelector(".liste").append(getTodoAsHTMLString(todo)) 
+}
+
 
 /* function createToDoItem(taskAsString){
     
