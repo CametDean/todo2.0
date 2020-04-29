@@ -1,7 +1,22 @@
 "use strict"
-let id = 0
+let todoItems = []
 
-function createToDoItem(taskAsString){
+function addTodoItem(todo, newTodoItem){
+    let item = newTodoItem
+    todo.push(item)
+}
+
+function removeTodoItem(todo, id){
+    todo.splice(id, 1);
+}
+
+
+function updateTodoItem(todo, id, newTask){
+    todo[id] = newTask
+}
+
+
+/* function createToDoItem(taskAsString){
     
     //Création des éléments
     let fragment = document.createRange().createContextualFragment(
@@ -29,14 +44,4 @@ function deleteToDoItem(id){
 function updateToDoItem(id, newTaskAsString){
     let item = getToDoItem(id)
     item.firstElementChild.innerHTML = newTaskAsString
-}
-
-function validatedCircle(iconeCircle){
-    iconeCircle.classList.toggle("fa-circle");
-    iconeCircle.classList.toggle("fa-check-circle");
-    iconeCircle.classList.toggle("validated")
-}
-
-function showTrash(iconeTrash){
-    iconeTrash.classList.toggle("hide");
-}
+} */
