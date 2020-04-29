@@ -53,29 +53,21 @@ main{
     color: rgb(129, 126, 126);
 }
 
-.liste ul{
-    line-height: 40px;
-}
-
-li{
-    display: flex;
-    justify-content: space-between;
+.listItem{
+    display: grid;
+    grid-template-columns: 30% 30% 30% 8% 5%;
     align-items: center;
-    padding: 3px;
-}
-
-.save{
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
+    width: 100%;
     margin-top: 5%;
-    color: white;
+    margin-bottom: 5%;
 }
 
-button{
-    position: absolute;
-    top: 5px;
-    right: 5px;
+p{
+    grid-column: span 3;
+}
+
+.fa-circle{
+    grid-column: 4;
 }
 
 
@@ -89,18 +81,22 @@ button{
     background-color: #7adfa9;
 }
 
+.updateItem{
+    background-color: #e7a392;
+}
+
 .validated{
     color: green;
 }
 
 .delete{
     color: rgba(95, 158, 160, 0.74);
-    position: absolute;
+    grid-column: 5;
 }
 
 .update{
     color: rgba(160, 95, 95, 0.808);
-    position: absolute;
+    grid-column: 5;
 }
 
 .hide{
