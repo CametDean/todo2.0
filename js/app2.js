@@ -16,11 +16,25 @@ function updateTodoItem(todo, id, newTask){
 }
 
 function getTodoAsHTMLString(todo){
-    
+    let items = []
+    todo.forEach((element, index) => {
+        items.push(`<div class="listItem" data-id="item-${index}">
+        <p>${element}</p>
+        <i class="far fa-circle"></i>
+        <i class="fas fa-trash"></i>
+        </div>`
+        )  
+    })
+    return items
 }
 
 function addDOM(todo){
-    return document.querySelector(".liste").append(getTodoAsHTMLString(todo)) 
+    let todoliste = getTodoAsHTMLString(todo)
+    todoliste.forEach(element => {
+        let div = document.createElement("div")
+        div.innerHTML = element
+        document.querySelector(".liste").append(div) 
+    })
 }
 
 
