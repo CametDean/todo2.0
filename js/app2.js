@@ -30,11 +30,21 @@ function getTodoAsHTMLString(todo){
 
 function addDOM(todo){
     let todoliste = getTodoAsHTMLString(todo)
+    let lengthDiv = document.querySelector(".liste").length
+
+    if (lengthDiv !== 0){
+        let items = document.querySelectorAll(".liste > div")
+        items.forEach(element => {
+            document.querySelector(".liste").removeChild(element) 
+        })
+    }
+
     todoliste.forEach(element => {
         let div = document.createElement("div")
         div.innerHTML = element
         document.querySelector(".liste").append(div) 
     })
+    
 }
 
 
